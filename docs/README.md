@@ -2,6 +2,7 @@
 
 | Folder | What's inside |
 |---|---|
+| [../scout/](../scout/README.md) | Scout: finds and scores tenders, prints the kickoff message |
 | [TODO.md](TODO.md) | Shared open work for both teammates |
 | [DONE.md](DONE.md) | What already landed |
 | [decisions/](decisions/) | Lasting choices, including [hosting (001)](decisions/001-hosting.md) |
