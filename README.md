@@ -1,5 +1,9 @@
 # Bidroom
 
+![Bidroom](demo/title.png)
+
+**Demo:** [full unedited bot run (6 min)](demo/bidroom-raw-run.mp4) · edited 60–90 s video: coming in `demo/`.
+
 **A public-tender department made of Grok Bots, for a small IT company.**
 
 Judges watch **only 1 minute** of the demo video. The cut we ship is 45 seconds ([script](docs/pitch/demo-script.md)). This README is the showcase for the rest: what Bidroom does, how the bots split the work, and how to run it.
