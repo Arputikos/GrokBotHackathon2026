@@ -1,0 +1,8 @@
+#!/bin/sh
+# git pull --rebase (and git rebase / commit --amend)
+dir=$(dirname "$0")
+git_dir=$(git rev-parse --git-dir)
+if [ -f "$git_dir/ORIG_HEAD" ]; then
+  "$dir/check-docs" ORIG_HEAD HEAD "Doc changes from this rebase/pull"
+fi
+exit 0

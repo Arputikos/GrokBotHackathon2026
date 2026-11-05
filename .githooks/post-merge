@@ -1,0 +1,8 @@
+#!/bin/sh
+# git pull (merge) and git merge
+dir=$(dirname "$0")
+git_dir=$(git rev-parse --git-dir)
+if [ -f "$git_dir/ORIG_HEAD" ]; then
+  "$dir/check-docs" ORIG_HEAD HEAD "Doc changes from this pull/merge"
+fi
+exit 0

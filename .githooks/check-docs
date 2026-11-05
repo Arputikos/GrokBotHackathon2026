@@ -1,0 +1,34 @@
+#!/bin/sh
+# Show collaboration-doc changes between two revisions. Always exits 0.
+old=$1
+new=$2
+label=${3:-Doc changes}
+
+zero=0000000000000000000000000000000000000000
+if [ -z "$old" ] || [ -z "$new" ] || [ "$old" = "$zero" ] || [ "$new" = "$zero" ] || [ "$old" = "$new" ]; then
+  exit 0
+fi
+
+DOC_PATHS="docs/ AGENTS.md HACKATHON.md .githooks/"
+
+if git diff --quiet "$old" "$new" -- $DOC_PATHS; then
+  echo
+  echo "Collaboration docs: no changes in this update."
+  echo
+  exit 0
+fi
+
+echo
+echo "=============================================="
+echo "$label"
+echo "=============================================="
+echo "If TODO, DONE, or decisions changed, read those files before you keep working."
+echo
+git log --oneline "$old..$new" -- $DOC_PATHS
+echo
+git diff --stat "$old" "$new" -- $DOC_PATHS
+echo
+git diff --name-status "$old" "$new" -- docs/TODO.md docs/DONE.md docs/decisions/ docs/README.md AGENTS.md HACKATHON.md
+echo "=============================================="
+echo
+exit 0
