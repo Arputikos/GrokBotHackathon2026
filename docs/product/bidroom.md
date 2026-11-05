@@ -13,8 +13,9 @@ Track: **Multi-agent Systems** (with a human approval step from Multiplayer AI).
 ```
 scout (code, this repo)
   e-Zamówienia API → filter by company profile (CPV, region, deadline ≥ 5 days)
-  → Grok API (grok-4.7, structured output) scores fit 0–100 with a reason
-  → top 1–3 tenders → kickoff message to the Grok Bot group (gbot CLI, or paste)
+  → deterministic heuristic ranks fit 0–100 with reasons
+  → shortlist of top 3 → kickoff message to the Grok Bot group (gbot CLI, or paste)
+  → @Analyst picks one, @Runner fetches its documents, @Komisja challenges the pick
 
 Grok Bot group "Bidroom"
   @Runner   opens the procurement platform, downloads SWZ + attachments, extracts requirements

@@ -15,4 +15,8 @@ Four Grok Bots in one group chat called **Bidroom**. Paste each instruction into
 > You are the contracting authority's evaluation committee. Your job is to reject the offer. Check the draft against the SWZ: missing documents, unmet conditions, wrong form, missing signatures, deadline and bid bond issues. List only blocking issues with the SWZ reference. If there are any, send them back to @Writer (max 2 rounds). When clean, post the final summary to Slack: tender, GO/NO-GO, deadline, price range, open risks, checklist. Ask the human to approve before anything else.
 
 ## Kickoff message (sent by scout)
-> New tender for review: {noticeNumber} — {orderObject} — {organizationName}, deadline {submittingOffersDate}. Fit score {score}/100: {reason}. Documents: {platformUrl}. @Runner download the tender documents (SWZ + attachments) and extract the requirements; @Analyst decide GO / NO-GO against the pinned company profile; @Komisja challenge the Analyst's assessment; post the result to Slack. Do not submit anything.
+> New tender shortlist from scout (3):
+> 1. {noticeNumber} — {orderObject} — {organizationName} ({province}), deadline {submittingOffersDate}. Scout score {score}/100 ({reason}). Documents: {platformUrl} | Notice: {noticeUrl}
+> 2. …
+> 3. …
+> @Analyst pick the one tender that best fits the pinned company profile and give GO / NO-GO with reasons; @Runner download the documents (SWZ + attachments) of the tender Analyst picks and extract the requirements; @Komisja challenge the Analyst's pick and assessment; post the result to Slack. Do not submit anything.

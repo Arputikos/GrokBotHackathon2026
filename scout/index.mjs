@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Bidroom scout: e-Zamówienia notices → profile filter → fit score → kickoff message.
+// Bidroom scout: e-Zamówienia notices → profile filter → heuristic fit score → shortlist kickoff message.
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -7,11 +7,9 @@ import { parseArgs } from 'node:util';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const BOARD = 'https://ezamowienia.gov.pl/mo-board/api/v1/notice';
-const XAI_URL = 'https://api.x.ai/v1/chat/completions';
-const MODEL = process.env.XAI_MODEL || 'grok-4.7';
 const PAGE_SIZE = 100;
-const CONCURRENCY = 4;
 const DAY = 86_400_000;
+const SHORTLIST = 3;
 
 const { values: args } = parseArgs({
   options: {
@@ -113,7 +111,7 @@ function toTender(n) {
   };
 }
 
-function heuristicScore(t, profile) {
+function fitScore(t, profile, now) {
   let score = 20;
   const why = [];
   const blockers = [];
@@ -136,75 +134,34 @@ function heuristicScore(t, profile) {
     if (body.includes(cert.toLowerCase())) { score -= 15; blockers.push(`${cert} mentioned (company has none)`); }
   }
   if (!t.belowEU) { score -= 5; why.push('above EU threshold'); }
+  const daysLeft = Math.floor((Date.parse(t.submittingOffersDate) - now) / DAY);
+  if (daysLeft >= 10) { score += daysLeft >= 20 ? 10 : 5; why.push(`${daysLeft} days to deadline`); }
 
   score = Math.max(0, Math.min(100, score));
   return {
     score,
     reason: why.join('; ') || 'no strong signals',
     hard_blockers: blockers,
-    go_hint: blockers.length ? 'NO-GO' : score >= 60 ? 'GO' : score >= 40 ? 'MAYBE' : 'NO-GO',
-    mode: 'heuristic',
+    hint: blockers.length ? 'NO-GO' : score >= 60 ? 'GO' : score >= 40 ? 'MAYBE' : 'NO-GO',
   };
-}
-
-const FIT_SCHEMA = {
-  type: 'object',
-  properties: {
-    score: { type: 'integer', description: 'Fit 0-100' },
-    reason: { type: 'string', description: 'One or two sentences, English' },
-    hard_blockers: { type: 'array', items: { type: 'string' } },
-    go_hint: { type: 'string', enum: ['GO', 'MAYBE', 'NO-GO'] },
-  },
-  required: ['score', 'reason', 'hard_blockers', 'go_hint'],
-  additionalProperties: false,
-};
-
-async function grokScore(t, profile, key) {
-  const res = await fetch(XAI_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${key}` },
-    signal: AbortSignal.timeout(90_000),
-    body: JSON.stringify({
-      model: MODEL,
-      messages: [
-        {
-          role: 'system',
-          content: 'You screen Polish public tenders for a small IT company. Score how well the tender fits the company profile (0 = irrelevant, 100 = perfect). ' +
-            'Hard blockers are conditions the company cannot meet (certificates, turnover, references, out-of-stack products). Be strict and concrete.',
-        },
-        { role: 'user', content: `Company profile:\n${JSON.stringify(profile)}\n\nTender ${t.noticeNumber} — ${t.orderObject}\nBuyer: ${t.organizationName} (${t.organizationProvince})\nCPV: ${t.cpv}\nDeadline: ${t.submittingOffersDate}\n\nNotice excerpt:\n${t.excerpt}` },
-      ],
-      response_format: { type: 'json_schema', json_schema: { name: 'tender_fit', strict: true, schema: FIT_SCHEMA } },
-    }),
-  });
-  if (!res.ok) throw new Error(`xAI ${res.status}: ${(await res.text()).slice(0, 200)}`);
-  const data = await res.json();
-  const fit = JSON.parse(data.choices[0].message.content);
-  return { ...fit, score: Math.max(0, Math.min(100, Math.round(fit.score))), mode: MODEL };
-}
-
-async function withRetry(fn) {
-  try { return await fn(); }
-  catch { await new Promise((r) => setTimeout(r, 1500)); return fn(); }
-}
-
-async function mapPool(items, limit, fn) {
-  const out = new Array(items.length);
-  let next = 0;
-  const worker = async () => { while (next < items.length) { const i = next++; out[i] = await fn(items[i], i); } };
-  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker));
-  return out;
 }
 
 const fmtDate = (iso) => new Date(iso).toLocaleString('pl-PL', { timeZone: 'Europe/Warsaw', dateStyle: 'short', timeStyle: 'short' });
 const cut = (s, n) => (s.length > n ? `${s.slice(0, n - 1)}…` : s);
 const host = (u) => new URL(u).hostname.replace(/^www\./, '');
 
-function kickoff(t) {
-  return `New tender for review: ${t.noticeNumber} — ${t.orderObject} — ${t.organizationName}, deadline ${fmtDate(t.submittingOffersDate)}. ` +
-    `Fit score ${t.fit.score}/100: ${t.fit.reason}. Documents: ${t.platformUrl}. ` +
-    `@Runner download the tender documents (SWZ + attachments) and extract the requirements; @Analyst decide GO / NO-GO against the pinned company profile; ` +
-    `@Komisja challenge the Analyst's assessment; post the result to Slack. Do not submit anything.`;
+function kickoff(shortlist) {
+  const lines = shortlist.map((t, i) =>
+    `${i + 1}. ${t.noticeNumber} — ${t.orderObject} — ${t.organizationName} (${t.organizationProvince}), deadline ${fmtDate(t.submittingOffersDate)}. ` +
+    `Scout score ${t.fit.score}/100 (${t.fit.reason}${t.fit.hard_blockers.length ? `; blockers: ${t.fit.hard_blockers.join('; ')}` : ''}). ` +
+    `Documents: ${t.platformUrl} | Notice: ${t.noticeUrl}`);
+  return [
+    `New tender shortlist from scout (${shortlist.length}):`,
+    ...lines,
+    `@Analyst pick the one tender that best fits the pinned company profile and give GO / NO-GO with reasons; ` +
+    `@Runner download the documents (SWZ + attachments) of the tender Analyst picks and extract the requirements; ` +
+    `@Komisja challenge the Analyst's pick and assessment; post the result to Slack. Do not submit anything.`,
+  ].join('\n');
 }
 
 async function main() {
@@ -221,18 +178,7 @@ async function main() {
   if (!open.length) fail('no open tenders match — try a larger --days or smaller --min-deadline-days');
 
   const tenders = open.map(toTender);
-  const key = process.env.XAI_API_KEY;
-  if (key) console.log(`Scoring ${tenders.length} tenders with ${MODEL} (concurrency ${CONCURRENCY})…`);
-  else console.log('! XAI_API_KEY not set — HEURISTIC MODE (no Grok API): CPV, region, service type, keywords');
-
-  let failed = 0;
-  await mapPool(tenders, CONCURRENCY, async (t) => {
-    if (!key) { t.fit = heuristicScore(t, profile); return; }
-    try { t.fit = await withRetry(() => grokScore(t, profile, key)); }
-    catch (e) { failed++; t.fit = { ...heuristicScore(t, profile), error: e.message }; }
-  });
-  if (failed) console.log(`! Grok scoring failed for ${failed} tender(s) — heuristic score used, marked with *`);
-
+  for (const t of tenders) t.fit = fitScore(t, profile, now.getTime());
   tenders.sort((a, b) => b.fit.score - a.fit.score || Date.parse(a.submittingOffersDate) - Date.parse(b.submittingOffersDate));
   const top = tenders.slice(0, topN);
 
@@ -241,8 +187,8 @@ async function main() {
   top.forEach((t, i) => {
     console.log([
       String(i + 1).padStart(1),
-      `${t.fit.score}${t.fit.error ? '*' : ''}`.padStart(5),
-      t.fit.go_hint.padEnd(5),
+      String(t.fit.score).padStart(5),
+      t.fit.hint.padEnd(5),
       fmtDate(t.submittingOffersDate).padEnd(17),
       (t.organizationProvince || '').padEnd(4),
       t.noticeNumber.padEnd(22),
@@ -252,14 +198,13 @@ async function main() {
     console.log(`   ${cut(t.fit.reason, 140)}${t.fit.hard_blockers.length ? ` | blockers: ${t.fit.hard_blockers.join('; ')}` : ''}`);
   });
 
-  const message = kickoff(top[0]);
+  const message = kickoff(top.slice(0, SHORTLIST));
   const outDir = resolve(HERE, 'out');
   await mkdir(outDir, { recursive: true });
   await writeFile(resolve(outDir, 'latest.json'), JSON.stringify({
     generatedAt: now.toISOString(),
-    mode: key ? MODEL : 'heuristic',
     params: { profile: args.profile, days, minDeadlineDays, top: topN },
-    counts: { fetched: lists.flat().length, unique: byNumber.size, open: open.length, scoringFailed: failed },
+    counts: { fetched: lists.flat().length, unique: byNumber.size, open: open.length },
     kickoff: message,
     top,
   }, null, 2));

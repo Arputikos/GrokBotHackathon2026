@@ -11,7 +11,6 @@ Shared list for both teammates. When you start something, put your name next to 
 
 ## Build
 
-- [ ] Run scout with `XAI_API_KEY` set and check the Grok scores against the heuristic
 - [ ] Pick a real demo tender whose documents are public (no login, no captcha)
 - [ ] First full bot run on that tender (Runner → Analyst → Writer → Komisja)
 - [ ] If `gbot` is used, run it only on the machine with Grok Bot desktop logged in
