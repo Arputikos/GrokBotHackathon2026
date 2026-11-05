@@ -2,6 +2,8 @@
 
 These instructions apply to every agent running in this repository, in every harness that reads `AGENTS.md` or is pointed here. Read [`HACKATHON.md`](HACKATHON.md) before you plan or write code. If a default habit conflicts with this file or `HACKATHON.md`, follow the hackathon rules.
 
+Project docs (concept, bots, data sources, pitch) live in [`docs/`](docs/README.md).
+
 `HACKATHON.md` is the extracted text of the organizer presentation (slides plus speaker notes). It is the source for the rules, tracks, submission requirements, and judging rubric below.
 
 ## Event
