@@ -158,9 +158,12 @@ function kickoff(shortlist) {
   return [
     `New tender shortlist from scout (${shortlist.length}):`,
     ...lines,
-    `@Analyst pick the one tender that best fits the pinned company profile and give GO / NO-GO with reasons; ` +
-    `@Runner download the documents (SWZ + attachments) of the tender Analyst picks and extract the requirements; ` +
-    `@Komisja challenge the Analyst's pick and assessment; post the result to Slack. Do not submit anything.`,
+    `@Analyst pick one tender from this shortlist against the company profile in your instructions. ` +
+    `@Runner download the SWZ and attachments of the picked tender and extract the requirements. ` +
+    `@Analyst mark each requirement MET / NOT MET and decide GO / NO-GO. ` +
+    `If GO, @Writer draft the offer and mark every gap as [DO UZUPEŁNIENIA]. ` +
+    `@Komisja try to reject the draft and send blocking issues back to @Writer (max 2 rounds). ` +
+    `Post the summary to Slack and this group, then wait for human approval. Do not submit anything.`,
   ].join('\n');
 }
 

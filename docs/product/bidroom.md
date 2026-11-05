@@ -15,7 +15,8 @@ scout (code, this repo)
   e-Zamówienia API → filter by company profile (CPV, region, deadline ≥ 5 days)
   → deterministic heuristic ranks fit 0–100 with reasons
   → shortlist of top 3 → kickoff message to the Grok Bot group (gbot CLI, or paste)
-  → @Analyst picks one, @Runner fetches its documents, @Komisja challenges the pick
+  → @Analyst picks one → @Runner fetches its SWZ → @Analyst MET / NOT MET + GO / NO-GO
+  → @Writer drafts if GO → @Komisja tries to reject (max 2 rounds) → Slack → human approval
 
 Grok Bot group "Bidroom"
   @Runner   opens the procurement platform, downloads SWZ + attachments, extracts requirements
