@@ -4,6 +4,8 @@
 
 **Four Grok Bots and one human. Komisja's job is to reject the offer. Tonight the human wrote: Approved. Do not submit.**
 
+**▶ Demo video (65 s): [demo/bidroom.mp4](demo/bidroom.mp4)** — a second run (Straż Miejska tender on logintrade: GO, Writer draft, Komisja rejects in two rounds, Slack summary) · [unedited recording](demo/bidroom-raw-run.mp4)
+
 Poland spent **PLN 587 billion** on public procurement in 2024 ([PIE](https://pie.net.pl/wp-content/uploads/2026/05/Zamowienia-publiczne-11.05.pdf)). Tonight Scout scored real notice **2026/BZP 00512450/01** at **65/100**. Wojewódzki Urząd Pracy we Wrocławiu, deadline 20 Nov 2026, 08:00. The team stopped. Nothing was filed.
 
 <table>
