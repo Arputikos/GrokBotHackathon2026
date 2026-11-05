@@ -18,7 +18,7 @@ Poland spent **PLN 587 billion** on public procurement in 2024 ([PIE](https://pi
 </td>
 <td width="50%">
 <img src="docs/pitch/stills/02-runner-documents.jpg" alt="Runner reports ten files from platformazakupowa.pl and hands off to Analyst">
-<br><b>Runner hands off to Analyst.</b> Ten files from platformazakupowa.pl, including the SWZ. No login, no captcha. The recording does not show the browser.
+<br><b>Runner hands off to Analyst.</b> Ten files from platformazakupowa.pl, including the SWZ. No login, no captcha. The still shows Runner's report, not its browser.
 </td>
 </tr>
 <tr>
@@ -35,9 +35,9 @@ Poland spent **PLN 587 billion** on public procurement in 2024 ([PIE](https://pi
 
 The bidder is fictional: Odra Soft, a 25-person Wrocław house on React and Node, PLN 8 m revenue, no ISO 27001. That gap, plus no ASP.NET team, is why this specification was a NO-GO.
 
-On a GO, Writer drafts and Komisja sends blocking issues back to Writer for up to two rounds. That is the 65-second video. This Wrocław run stopped at NO-GO, before any draft.
+On a GO, Writer drafts and Komisja sends blocking issues back to Writer for up to two rounds. That is the 65-second video. On the Wrocław notice, Analyst ruled out an offer before anyone drafted one.
 
-The uncut recording of the Wrocław run is [demo/bidroom-raw-run.mp4](demo/bidroom-raw-run.mp4).
+[demo/bidroom-raw-run.mp4](demo/bidroom-raw-run.mp4) is the uncut recording of that same Straż Miejska run, not the Wrocław stills. A Scout bot posts the shortlist, Analyst skips 2026/BZP 00512450/01 as an earlier NO-GO and picks Warsaw's 2026/BZP 00517275/01, Runner opens the files in a live browser, and Komisja runs two rejection rounds before posting to Slack. The browser frame is [demo/frames/02-logintrade-attachments.jpg](demo/frames/02-logintrade-attachments.jpg).
 
 ```bash
 node scout/index.mjs --top 3

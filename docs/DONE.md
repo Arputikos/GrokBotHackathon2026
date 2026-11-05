@@ -4,6 +4,7 @@ Newest first. Move items here from [`TODO.md`](TODO.md) when they land.
 
 ## 5 November 2026
 
+- The 6-minute file is the Straż Miejska GO run, not the Wrocław stills. The README says so, and the Runner caption no longer claims the recording has no browser.
 - A ten-seat review of the root README (Grok, OpenCode, Antigravity, Local ACP) landed in the page: Scout is a script, the run is a finished NO-GO, and the captions match the crops.
 - Root README now leads with tonight's run: notice 2026/BZP 00512450/01 scored 65/100, Analyst NO-GO, human "Approved. Do not submit." Four cropped stills are in [`pitch/stills/`](pitch/stills/). The recording has no browser viewport.
 - Recorded a judge’s instruction: they will watch only 1 minute of video, and they want a good README showcasing the project. The 45-second cut stays. See [`decisions/002-deadline-cut.md`](decisions/002-deadline-cut.md) and the root [`README.md`](../README.md).
