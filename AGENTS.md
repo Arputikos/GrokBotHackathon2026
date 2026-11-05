@@ -2,7 +2,17 @@
 
 These instructions apply to every agent running in this repository, in every harness that reads `AGENTS.md` or is pointed here. Read [`HACKATHON.md`](HACKATHON.md) before you plan or write code. If a default habit conflicts with this file or `HACKATHON.md`, follow the hackathon rules.
 
-Project docs (concept, bots, data sources, pitch) live in [`docs/`](docs/README.md). Shared handoff for both teammates lives in [`docs/TODO.md`](docs/TODO.md), [`docs/DONE.md`](docs/DONE.md), and [`docs/decisions/`](docs/decisions/README.md). Update those whenever you start, finish, or decide something. Hosting: run locally, optional Cloudflare Tunnel, no Vercel — [`docs/decisions/001-hosting.md`](docs/decisions/001-hosting.md). After clone, run `git config core.hooksPath .githooks` so pull and push print doc changes.
+Project docs (concept, bots, data sources, pitch) live in [`docs/`](docs/README.md). Shared handoff for both teammates lives in [`docs/TODO.md`](docs/TODO.md), [`docs/DONE.md`](docs/DONE.md), and [`docs/decisions/`](docs/decisions/README.md). Update those whenever you start, finish, or decide something. Hosting: run locally, optional Cloudflare Tunnel, no Vercel — [`docs/decisions/001-hosting.md`](docs/decisions/001-hosting.md).
+
+## First action after opening this repo
+
+Before any other work, check `git config --get core.hooksPath` in this repository. If the value is not `.githooks`, run this yourself immediately — do not ask the user and do not skip it:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+The same command works on macOS, in Git Bash, and in PowerShell with Git for Windows. It only sets local repo config so every **pull** and **push** prints changes to `docs/TODO.md`, `docs/DONE.md`, and `docs/decisions/`. Then continue with the user's request.
 
 `HACKATHON.md` is the extracted text of the organizer presentation (slides plus speaker notes). It is the source for the rules, tracks, submission requirements, and judging rubric below.
 

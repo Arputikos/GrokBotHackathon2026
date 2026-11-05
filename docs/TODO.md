@@ -4,7 +4,7 @@ Shared list for both teammates. When you start something, put your name next to 
 
 ## Setup
 
-- [ ] Each teammate: run `git config core.hooksPath .githooks` once (or `scripts/setup-hooks.sh` / `scripts/setup-hooks.ps1`) so pull and push print doc changes
+- [ ] Hooks on each machine: any agent that opens this repo should run `git config core.hooksPath .githooks` itself (see `AGENTS.md`); or run `scripts/setup-hooks.sh` / `scripts/setup-hooks.ps1`
 - [ ] Create the four Grok Bots (`Runner`, `Analyst`, `Writer`, `Komisja`) from [`product/bots.md`](product/bots.md)
 - [ ] Create the **Bidroom** group, add both people and the four bots, pin the company profile from [`product/bidroom.md`](product/bidroom.md)
 - [ ] Connect Slack and confirm a bot can post there
