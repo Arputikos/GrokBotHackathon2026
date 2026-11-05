@@ -50,6 +50,7 @@ Grok Bot and/or SpaceXAI APIs are required. Theme alignment means people + AI, o
 1. A repository with the project code. Organizers asked for a **private** repository, with judges invited.
 2. Commit the team’s AI coding session exports to [`/sessions`](sessions/) at the repository root.
 3. Preserve build history so implementation during the sprint is visible.
+4. A judge said they will watch **only 1 minute** of video and want a **good README showcasing the project**. The submitted video is the 45-second cut in [`docs/pitch/demo-script.md`](docs/pitch/demo-script.md). The showcase is the root [`README.md`](README.md).
 
 ## Judging
 

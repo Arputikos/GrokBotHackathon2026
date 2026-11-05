@@ -24,9 +24,9 @@ Shared list for both teammates. When you start something, put your name next to 
 
 ## 20:15 → 20:40 — judge video
 
-- [ ] Cut the [45-second judge video](pitch/demo-script.md). The first 15 seconds must show the 587 bn line and the scout score.
+- [ ] Cut the [45-second judge video](pitch/demo-script.md). A judge will watch only 1 minute, so the file must finish inside that minute. The first 15 seconds must show the 587 bn line and the scout score.
 - [ ] Export four stills: title, scout score, Runner on the platform, the approval.
-- [ ] README for judges, with those stills on the first screen.
+- [ ] Root [`README.md`](../README.md) is the showcase a judge asked for. First screen: those stills. The page must explain the project if they never press play.
 
 **20:40 — move on.** Stop editing. A short video in the repo beats a longer one that is still in the editor.
 

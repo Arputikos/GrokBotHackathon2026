@@ -3,6 +3,15 @@
 Extracted from the organizer Keynote attached on 5 November 2026.
 Speaker notes are included where present; they contain the full judging rubric and extra organizer clarifications.
 
+## Judge note, 5 November 2026 (during the sprint)
+
+A judge told the team:
+
+- They will watch only **1 minute** of video.
+- They want a **good README showcasing the project**.
+
+The submitted demo is the 45-second cut in [`docs/pitch/demo-script.md`](docs/pitch/demo-script.md), inside that minute. The showcase they read is the root [`README.md`](README.md). The 60-second script is for the live stage at 21:30, not for the file in the repo.
+
 ## Slide 1
 
 Grok Bot for

@@ -1,6 +1,6 @@
 # Demo scripts
 
-Judges spend 30–60 seconds. Ship the 45-second cut. Keep the 60-second script for the stage at 21:30.
+A judge said on 5 November 2026 that they will watch **only 1 minute** of video, and that they want a good README showcasing the project ([`../../README.md`](../../README.md)). Ship the 45-second cut so the whole story fits inside that minute. Keep the 60-second script for the stage at 21:30, where this cap does not apply.
 
 ## 45-second judge cut
 
