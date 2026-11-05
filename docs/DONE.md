@@ -4,6 +4,7 @@ Newest first. Move items here from [`TODO.md`](TODO.md) when they land.
 
 ## 5 November 2026
 
+- Root [`README.md`](../README.md) for judges; demo script updated to the 4-bot flow ([`pitch/demo-script.md`](pitch/demo-script.md)).
 - Locked the 19:31 deadline plan: one recorded bot run, a 45-second judge video, submit by 20:55. Tunnel, status page, and Chief of Staff are cut. See [`decisions/002-deadline-cut.md`](decisions/002-deadline-cut.md).
 - Scout ([`../scout/`](../scout/README.md)): e-Zamówienia API → profile filter → heuristic fit score (no API key) → top N table, `scout/out/latest.json`, shortlist kickoff message (top 3) for the Bidroom group; @Analyst makes the pick.
 - Documented the hosting decision: no Vercel; run locally on a teammate laptop (macOS or Windows); optional public URL via Cloudflare Tunnel without visitor login. See [`decisions/001-hosting.md`](decisions/001-hosting.md).

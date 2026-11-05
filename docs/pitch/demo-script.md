@@ -20,8 +20,12 @@ Export four stills from this cut for the README: title, scout score, Runner on t
 
 | Time | Screen | Voice-over |
 |---|---|---|
-| 0–8 s | Title card | "Poland spends 587 billion złoty a year on public tenders. Small companies lose them before they even see them." |
-| 8–20 s | Scout in the terminal: notices → fit score 87/100 | "Bidroom scans every new notice and scores it against your company." |
-| 20–45 s | Grok Bot group, sped up: Runner browses a platform with no API and downloads the SWZ; Analyst says GO; Komisja rejects the draft; Writer fixes it | "A team of Grok Bots fetches the documents from any platform, decides go or no-go, drafts the offer — and a committee bot tries to reject it first." |
-| 45–55 s | Slack message, human approves | "You get one message in Slack. You just say yes." |
+| 0–7 s | Title card | "Poland spends 587 billion złoty a year on public tenders. Small IT companies miss most of them." |
+| 7–15 s | `node scout/index.mjs` → shortlist | "Bidroom scans every new notice and shortlists the ones that fit your company." |
+| 15–25 s | Group chat: Analyst picks one; Runner browses the platform (no API) and downloads the SWZ | "A team of Grok Bots picks the best one and fetches the documents from a platform with no API — in its own browser." |
+| 25–35 s | Analyst: MET / NOT MET table → GO | "The Analyst checks every condition against your company and says go or no-go." |
+| 35–48 s | Writer posts the draft; Komisja rejects it; Writer fixes it | "The Writer drafts the offer — and a committee bot tries to reject it before the real committee does." |
+| 48–55 s | Slack message, human approves | "You get one message in Slack. You just say yes." |
 | 55–60 s | Logo | "Bidroom — your tender department, made of Grok Bots." |
+
+Recording tips: record the whole run once, cut idle waits, speed bot work 5–10×, keep each chat message on screen long enough to read one line.
