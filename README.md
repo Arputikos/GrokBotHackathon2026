@@ -1,6 +1,8 @@
 # Bidroom
 
-<img src="docs/pitch/stills/00-title.jpg" alt="Bidroom. Your tender department, made of Grok Bots." width="640">
+<p align="center">
+  <img src="docs/pitch/stills/00-title.jpg" alt="Bidroom. Your tender department, made of Grok Bots." width="640">
+</p>
 
 Track: **Multi-agent Systems.**
 
