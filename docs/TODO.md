@@ -6,18 +6,18 @@ Shared list for both teammates. When you start something, put your name next to 
 
 ## Now → 19:45 — bots and one tender
 
-- [ ] Create the four Grok Bots (`Runner`, `Analyst`, `Writer`, `Komisja`) from [`product/bots.md`](product/bots.md). Paste the instructions. Do not rewrite them.
-- [ ] Create the **Bidroom** group, add both people and the four bots, pin the company profile from [`product/bidroom.md`](product/bidroom.md)
-- [ ] Run `node scout/index.mjs`. Pick the highest-scoring tender whose documents open with no login and no captcha. Prefer platformazakupowa.pl. Save the terminal output.
-- [ ] Start screen recording before the kickoff is pasted.
-- [ ] Connect Slack only if a test post lands inside this window.
+- [x] Create the four Grok Bots (`Runner`, `Analyst`, `Writer`, `Komisja`) from [`product/bots.md`](product/bots.md). Paste the instructions. Do not rewrite them.
+- [x] Create the **Bidroom** group, add both people and the four bots, pin the company profile from [`product/bidroom.md`](product/bidroom.md)
+- [x] Run `node scout/index.mjs`. Pick the highest-scoring tender whose documents open with no login and no captcha. Prefer platformazakupowa.pl. Save the terminal output.
+- [x] Start screen recording before the kickoff is pasted. The raw take is local only (about 1.3 GB). Do not commit it.
+- [ ] Connect Slack only if a test post lands inside this window. It did not. Dropped.
 
 **19:45 — move on.** Paste the kickoff with however many bots exist. Stop editing instructions. Leave Slack if it is not connected.
 
 ## 19:45 → 20:15 — one recorded run
 
-- [ ] Paste the scout kickoff into the group (or `gbot send` from the machine where Grok Bot desktop is logged in).
-- [ ] Keep recording. The take needs three shots: Runner's browser on the document platform, Analyst and Komisja in the same chat, a human reply that says approved.
+- [x] Paste the scout kickoff into the group (or `gbot send` from the machine where Grok Bot desktop is logged in).
+- [ ] Keep recording. The take needs three shots: Runner's browser on the document platform, Analyst and Komisja in the same chat, a human reply that says approved. Analyst, Komisja, and the approval are in the stills. The browser viewport never appears.
 - [ ] **20:05 — move on from waiting.** If Runner has not opened the platform, send one message that contains the document URL. Do not start a new run.
 
 **20:15 — move on.** Stop the bots. No second take unless the browser shot is missing.
@@ -25,14 +25,14 @@ Shared list for both teammates. When you start something, put your name next to 
 ## 20:15 → 20:40 — judge video
 
 - [ ] Cut the [45-second judge video](pitch/demo-script.md). A judge will watch only 1 minute, so the file must finish inside that minute. The first 15 seconds must show the 587 bn line and the scout score.
-- [ ] Export four stills: title, scout score, Runner on the platform, the approval.
-- [ ] Root [`README.md`](../README.md) is the showcase a judge asked for. First screen: those stills. The page must explain the project if they never press play.
+- [x] Export four stills: title, scout score, Runner on the platform, the approval. Crops are in [`pitch/stills/`](pitch/stills/). There is no browser frame, so the Runner still is the chat handoff.
+- [x] Root [`README.md`](../README.md) is the showcase a judge asked for. First screen: those stills. The page must explain the project if they never press play.
 
 **20:40 — move on.** Stop editing. A short video in the repo beats a longer one that is still in the editor.
 
 ## 20:40 → 20:55 — submit
 
-- [ ] Export AI coding sessions into `/sessions`
+- [x] Export AI coding sessions into `/sessions`
 - [ ] Submission checklist from [`../HACKATHON.md`](../HACKATHON.md): private repo, invite judges, push. Do not squash or rebase.
 
 **20:55 — freeze.** Copy the video onto the laptop. No more commits unless a judge cannot open the repo.

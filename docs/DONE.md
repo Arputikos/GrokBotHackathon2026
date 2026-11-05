@@ -4,6 +4,7 @@ Newest first. Move items here from [`TODO.md`](TODO.md) when they land.
 
 ## 5 November 2026
 
+- Root README now leads with tonight's run: notice 2026/BZP 00512450/01 scored 65/100, Analyst NO-GO, human "Approved. Do not submit." Four cropped stills are in [`pitch/stills/`](pitch/stills/). The recording has no browser viewport.
 - Recorded a judge’s instruction: they will watch only 1 minute of video, and they want a good README showcasing the project. The 45-second cut stays. See [`decisions/002-deadline-cut.md`](decisions/002-deadline-cut.md) and the root [`README.md`](../README.md).
 - Root [`README.md`](../README.md) for judges; demo script updated to the 4-bot flow ([`pitch/demo-script.md`](pitch/demo-script.md)).
 - Locked the 19:31 deadline plan: one recorded bot run, a 45-second judge video, submit by 20:55. Tunnel, status page, and Chief of Staff are cut. See [`decisions/002-deadline-cut.md`](decisions/002-deadline-cut.md).
