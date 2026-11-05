@@ -1,0 +1,70 @@
+{
+  "name": "Odra Soft sp. z o.o.",
+  "description": "Wrocław software house, 25 people. Builds web and mobile apps in React, React Native and Node.js. Annual revenue PLN 8 m. Three public-sector mobile app references (city app, regional transport app, e-services app for a voivodeship office). No ISO 27001 certificate.",
+  "city": "Wrocław",
+  "employees": 25,
+  "annualRevenuePln": 8000000,
+  "stack": [
+    "React",
+    "React Native",
+    "Node.js",
+    "TypeScript"
+  ],
+  "references": [
+    "Mobile city app for a municipality (React Native)",
+    "Regional public transport mobile app (React Native)",
+    "E-services mobile app for a voivodeship office (React Native + Node.js)"
+  ],
+  "certifications": [],
+  "missingCertifications": [
+    "ISO 27001"
+  ],
+  "cpv": [
+    "72000000-5",
+    "48000000-8",
+    "72200000-7",
+    "72400000-4",
+    "72260000-5"
+  ],
+  "regions": "PL",
+  "preferredProvinces": [
+    "PL02"
+  ],
+  "keywords": [
+    "aplikacj",
+    "mobiln",
+    "react",
+    "node",
+    "portal",
+    "serwis internetowy",
+    "strona internetow",
+    "platform",
+    "web",
+    "frontend",
+    "system",
+    "wdrożen",
+    "rozbudow",
+    "utrzymani"
+  ],
+  "avoidKeywords": [
+    "licencj",
+    "dostawa sprzętu",
+    "sprzęt",
+    "serwer",
+    "drukar",
+    "komputer",
+    "microsoft",
+    "oracle",
+    "sap",
+    "asseco",
+    "amms",
+    "infomedica",
+    "kamer",
+    "telefon",
+    "infrastruktur",
+    "wirtualizac",
+    "aktualizacj",
+    "sieci",
+    "backup"
+  ]
+}
