@@ -36,19 +36,22 @@ Wrocław software house, 25 people, React / React Native / Node, PLN 8 m annual 
 
 ## Out of scope (deliberately)
 - Submitting offers or qualified signatures — always stop at human approval.
-- Web dashboard — Slack + the Grok Bot group are the UI. Only with spare time.
+- Web dashboard — Slack + the Grok Bot group are the UI. Cut for tonight by [decision 002](../decisions/002-deadline-cut.md).
 - Platforms behind a login — the demo tender has public documents.
-- A "Chief of Staff" bot that hires the team via `gbot` — only if scout is done before 20:00.
+- A "Chief of Staff" bot. Cut at 19:31 by [decision 002](../decisions/002-deadline-cut.md).
 
 ## Plan B
 - `gbot` fails → scout prints the kickoff message, paste it into the group by hand.
 - Grok Bot unavailable → the 4 roles as a Grok API loop in code; weaker on Technical and Theme.
 
 ## Timeline (Europe/Warsaw)
+
+Superseded at 19:31. Follow [`../decisions/002-deadline-cut.md`](../decisions/002-deadline-cut.md) and [`../TODO.md`](../TODO.md).
+
 | Time | Goal |
 |---|---|
-| 19:05–19:20 | Repo, bots created, Slack connected |
-| 19:20–20:10 | Scout end-to-end; first full bot run on a real tender |
-| 20:10–20:30 | Clean run recorded (this goes into the video) |
-| 20:30–20:50 | 60 s video, README, `/sessions`, submission |
-| 20:50–21:00 | Buffer |
+| 19:31–19:45 | Four bots, Bidroom group, scout run, one public tender, recording on |
+| 19:45–20:15 | One recorded group run. At 20:05, nudge @Runner with the document URL |
+| 20:15–20:40 | 45 s judge video, four stills, README |
+| 20:40–20:55 | `/sessions`, invite judges, push |
+| 20:55–21:00 | Freeze |

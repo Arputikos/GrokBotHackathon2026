@@ -14,6 +14,10 @@ git config core.hooksPath .githooks
 
 The same command works on macOS, in Git Bash, and in PowerShell with Git for Windows. It only sets local repo config so every **pull** and **push** prints changes to `docs/TODO.md`, `docs/DONE.md`, and `docs/decisions/`. Then continue with the user's request.
 
+## Tonight's clock
+
+Sprint submission is **21:00 Europe/Warsaw** on 5 November 2026. The live plan is [`docs/decisions/002-deadline-cut.md`](docs/decisions/002-deadline-cut.md) and the timed boxes in [`docs/TODO.md`](docs/TODO.md). At each cutoff, stop the current box and start the next one. Do not start a tunnel, a status page, or another bot. When a cutoff is near, tell the user to move on before starting new work.
+
 `HACKATHON.md` is the extracted text of the organizer presentation (slides plus speaker notes). It is the source for the rules, tracks, submission requirements, and judging rubric below.
 
 ## Event

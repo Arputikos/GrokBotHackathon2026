@@ -20,3 +20,4 @@ On Windows the same command works in Git Bash or PowerShell. Or run `scripts/set
 | ID | Decision |
 |---|---|
 | [001](001-hosting.md) | No Vercel. Run locally on a teammate laptop. Expose a public demo URL with Cloudflare Tunnel (no visitor login). |
+| [002](002-deadline-cut.md) | From 19:31, only the bot run and a 45-second judge video. Tunnel, status page, and Chief of Staff are cut. Switch at 19:45, 20:05, 20:15, 20:40, 20:55. |
