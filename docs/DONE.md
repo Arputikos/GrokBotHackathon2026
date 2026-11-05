@@ -4,6 +4,7 @@ Newest first. Move items here from [`TODO.md`](TODO.md) when they land.
 
 ## 5 November 2026
 
+- The judge demo in the root README is the YouTube link. The local mp4 links are gone.
 - Cut repeated sentences from the root README so a one-minute skim reaches the stills and the scout command. The 6-minute file stays identified as the Straż Miejska run.
 - The 6-minute file is the Straż Miejska GO run, not the Wrocław stills. The README says so, and the Runner caption no longer claims the recording has no browser.
 - A ten-seat review of the root README (Grok, OpenCode, Antigravity, Local ACP) landed in the page: Scout is a script, the run is a finished NO-GO, and the captions match the crops.

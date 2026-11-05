@@ -6,7 +6,7 @@ Track: **Multi-agent Systems.**
 
 **Four Grok Bots and one human. Komisja is the in-house committee, there to reject the offer before the authority does. A human approves. No bot submits or signs.**
 
-**65-second demo:** [demo/bidroom.mp4](demo/bidroom.mp4). Straż Miejska on logintrade: GO, a draft, Komisja rejects it in two rounds, then Slack. [Uncut](demo/bidroom-raw-run.mp4) is that same run, not these stills.
+**65-second demo:** [Watch on YouTube](https://youtu.be/f9L37ma6uyI). Straż Miejska on logintrade: GO, a draft, Komisja rejects it in two rounds, then Slack. The stills below are the Wrocław NO-GO, not this video.
 
 Poland spent **PLN 587 billion** on public procurement in 2024 ([PIE](https://pie.net.pl/wp-content/uploads/2026/05/Zamowienia-publiczne-11.05.pdf)). Scout, a script on the public e-Zamówienia API, scored real notice **2026/BZP 00512450/01** at **65/100**. Analyst called NO-GO. The human wrote: **Approved. Do not submit.** Nothing was filed.
 
